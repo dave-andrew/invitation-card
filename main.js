@@ -1,6 +1,6 @@
 
 window.addEventListener("load", () => {
-    const finalDate = new Date("Sept 22, 2022 18:00:00").getTime();
+    const finalDate = new Date("November 22, 2022 18:00:00").getTime();
 
     const output = document.querySelector("#cd");
 
@@ -18,22 +18,33 @@ window.addEventListener("load", () => {
         let minute = "";
         let second = "";
 
-        if(days<10){
+        if(days<=0){
+            day = "00";
+        }else if(days<10){
             day = "0"+days.toString();
         }else{
             day=days.toString();
         }
-        if(hours<10){
+
+        if(hours<=0){
+            hour="00";
+        }else if(hours<10){
             hour = "0"+hours.toString();
         }else{
             hour=hours.toString();
         }
-        if(minutes<10){
+
+        if(minutes<=0){
+            minute = "00";
+        }else if(minutes<10){
             minute = "0"+minutes.toString();
         }else{
             minute=minutes.toString();
         }
-        if(seconds<10){
+
+        if(seconds<=0){
+            second = "00";
+        }else if(seconds<10){
             second = "0"+seconds.toString();
         }else{
             second=seconds.toString();
@@ -42,5 +53,3 @@ window.addEventListener("load", () => {
         output.textContent = day + " : " + hour + " : " + minute + " : " + second;
     });
 });
-
-
